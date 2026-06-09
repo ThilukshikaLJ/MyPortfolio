@@ -89,6 +89,7 @@ function createProjectCard(project) {
   const imageSources = projectImages.length ? projectImages : [];
   let imageIndex = 0;
   let imageTimer = null;
+  let stage = null;
 
   let currentImage = null;
 
@@ -144,7 +145,7 @@ function createProjectCard(project) {
   }
 
   if (imageSources.length) {
-    const stage = document.createElement("div");
+    stage = document.createElement("div");
     stage.className = "project-image-stage";
     imageWrap.appendChild(stage);
 
@@ -174,6 +175,8 @@ function createProjectCard(project) {
   if (imageSources.length > 1) {
     article.addEventListener("pointerenter", startImageAutoplay);
     article.addEventListener("pointerleave", stopImageAutoplay);
+    article.addEventListener("mouseenter", startImageAutoplay);
+    article.addEventListener("mouseleave", stopImageAutoplay);
     article.addEventListener("focusin", startImageAutoplay);
     article.addEventListener("focusout", stopImageAutoplay);
   }

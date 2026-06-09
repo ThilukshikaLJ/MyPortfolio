@@ -1,7 +1,7 @@
 [
   {
     "title": "Donor Prediction System - ML Pipeline Development",
-    "meta": "Feb 2026 - Present | Python, Pandas, NumPy, Scikit-learn, Matplotlib",
+    "meta": "Feb 2026 - Present Python, Pandas, NumPy, Scikit-learn, Matplotlib",
     "image": "images/projects/donor-prediction.png",
     "alt": "Donor Prediction System project preview",
     "link": "https://github.com/ThilukshikaLJ",
@@ -50,9 +50,9 @@
         "link": "https://github.com/ThilukshikaLJ/TalkNest",
     "alt": "TalkNest academic session booking project preview",
     "bullets": [
-      "Built a full-stack academic platform for student consultations, group session bookings, and lab resource management.",
-      "Implemented role-based access control for students and instructors with JWT authentication.",
-      "Designed RESTful APIs with Django REST Framework ensuring data validation and scalable architecture."
+      "A full-stack academic platform for student consultations, group session bookings, and lab resource management.",
+      "Role-based access control for students and instructors with JWT authentication.",
+      "RESTful APIs with Django REST Framework ensuring data validation and scalable architecture."
     ]
   },
   {
@@ -66,9 +66,9 @@
     "link": "https://github.com/ThilukshikaLJ/gazette-chatbot",
     "alt": "Gazette Chatbot project preview",
     "bullets": [
-      "Built an AI-powered chatbot for semantic search and contextual Q&A across Sri Lanka's Legal Gazette documents.",
-      "Developed a complete RAG pipeline using LangChain, HuggingFace embeddings, and ChromaDB for vector retrieval.",
-      "Integrated multi-LLM architecture supporting Groq, OpenAI, and Ollama with a Streamlit chat interface."
+      "An AI-powered chatbot for semantic search and contextual Q&A across Sri Lanka's Legal Gazette documents.",
+      "RAG pipeline using LangChain, HuggingFace embeddings, and ChromaDB for vector retrieval.",
+      "Multi-LLM architecture supporting Groq, OpenAI, and Ollama with a Streamlit chat interface."
     ]
   },
   {
@@ -82,9 +82,9 @@
     "link": "https://github.com/ThilukshikaLJ/SmartStudyApp",
     "alt": "SmartStudyApp project preview",
     "bullets": [
-      "Developed an Android study companion application to enhance digital learning through document reading and annotation.",
-      "Implemented PDF and image viewing, note-taking, and bookmarking features for structured study workflows.",
-      "Used SQLite and Room database for efficient local data storage and application state management."
+      "A Android study companion application for digital learning through document reading and annotation.",
+      "PDF and image viewing, note-taking, and bookmarking features for structured study workflows.",
+      "SQLite and Room database for efficient local data storage and application state management."
     ]
   },
   {
@@ -98,9 +98,9 @@
     "link": "https://github.com/ThilukshikaLJ/SthreeHub",
     "alt": "Authentication and authorization web application preview",
     "bullets": [
-      "Built a full-stack web application with complete authentication service using RESTful APIs.",
-      "Implemented email verification, JWT login, password reset, and role-based access control (Buyer/Seller).",
-      "Deployed on Microsoft Azure with MongoDB as the primary database."
+      "A full-stack web application with complete authentication service using RESTful APIs.",
+      "Email verification, JWT login, password reset, and role-based access control (Buyer/Seller).",
+      "Microsoft Azure with MongoDB as the primary database."
     ]
   },
   {
