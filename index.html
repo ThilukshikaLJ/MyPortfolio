@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thilukshika Leo Jebarajah | Portfolio</title>
+    <meta
+      name="description"
+      content="A dark, purple-themed portfolio for Thilukshika Leo Jebarajah, focused on Data Science, Analytics, Machine Learning, and AI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="bg-orb bg-orb-one"></div>
+      <div class="bg-orb bg-orb-two"></div>
+      <div class="noise"></div>
+
+      <header class="topbar">
+        <a class="brand" href="#home">Thilukshika<span>.</span></a>
+        <nav id="site-nav" class="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#activities">Extra Curricular Activities</a>
+          <a href="#conduct">Conduct</a>
+        </nav>
+        <div class="topbar-actions">
+          <a class="resume-btn" href="resume/thilukshika-cv.pdf" download="Thilukshika_CV.pdf">
+            Download Resume
+          </a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section id="home" class="hero section">
+          <div class="hero-copy hero-copy-left reveal">
+            <p class="eyebrow">Hello, I'm</p>
+            <h1>
+              <span>Thilukshika</span>
+              <span>Leo Jebarajah</span>
+            </h1>
+            <p class="hero-subtitle">Data Science | Analytics</p>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="photo-frame">
+              <div class="photo-glow"></div>
+              <div class="photo-holder">
+                <img
+                  class="profile-photo"
+                  src="images/profile/thilukshika-profile.png"
+                  alt="Thilukshika Leo Jebarajah"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-copy hero-copy-right reveal">
+            <p class="eyebrow">Who am I</p>
+            <h2>Data Scientist <span>&amp; Analyst</span></h2>
+            <p class="hero-side-text">
+              Turning raw data into insight, strategy, and smarter decisions.
+            </p>
+          </div>
+        </section>
+
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <section id="about" class="section card-section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">About</p>
+            <h2>Who I Am</h2>
+          </div>
+          <div class="about-grid">
+            <div class="glass-card large">
+              <p>
+                I'm Thilukshika Leo Jebarajah, a 3rd year IT undergraduate at
+                the University of Kelaniya, specializing in Data Science and
+                Analytics. I'm passionate about transforming raw data into
+                meaningful insights that drive real-world decisions, with a
+                strong interest in machine learning, business intelligence, and
+                AI-powered solutions.
+              </p>
+            </div>
+            <div class="glass-card">
+              <h3>Focus Areas</h3>
+              <ul class="bullets">
+                <li>Data science and analytics</li>
+                <li>Machine learning workflows</li>
+                <li>Business intelligence dashboards</li>
+                <li>Data modeling and storytelling</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section reveal">
+          <div class="section-heading section-heading-row">
+            <div>
+              <p class="section-kicker">Projects</p>
+              <h2>Selected Work</h2>
+            </div>
+            <div class="slider-controls" aria-label="Project navigation">
+              <button class="icon-btn" type="button" data-slide="prev" aria-label="Previous project">
+                <span>&larr;</span>
+              </button>
+              <button class="icon-btn" type="button" data-slide="next" aria-label="Next project">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="projects-track" tabindex="0" aria-label="Project carousel">
+            <article class="project-card">
+              <a class="corner-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
+                &#8599;
+              </a>
+              <div class="project-image">
+                <img src="images/projects/donor-prediction.png" alt="Donor Prediction System project preview" />
+              </div>
+              <div class="project-content">
+                <p class="project-meta">Feb 2026 - Present | Python, Pandas, NumPy, Scikit-learn, Matplotlib</p>
+                <h3>Donor Prediction System - ML Pipeline Development</h3>
+                <ul>
+                  <li>Built an end-to-end pipeline for donor CSV and Excel data.</li>
+                  <li>Cleaned, transformed, and scaled data for downstream ML use.</li>
+                  <li>Applied K-Means clustering for segmentation and pattern discovery.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <a class="corner-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
+                &#8599;
+              </a>
+              <div class="project-image">
+                <img src="images/projects/olist-dashboard.png" alt="Olist E-Commerce Sales Analytics Dashboard preview" />
+              </div>
+              <div class="project-content">
+                <p class="project-meta">March 2026 | Power BI, Power Query, DAX, Excel, ETL</p>
+                <h3>Olist E-Commerce Sales Analytics Dashboard</h3>
+                <ul>
+                  <li>Integrated 9 relational datasets with Power Query and ETL flows.</li>
+                  <li>Designed a star schema to support reliable business analysis.</li>
+                  <li>Built interactive dashboards for sales and customer insights.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <a class="corner-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
+                &#8599;
+              </a>
+              <div class="project-image">
+                <img src="images/projects/cinebook-distributed.png" alt="CineBook Distributed project preview" />
+              </div>
+              <div class="project-content">
+                <p class="project-meta">Jan 2026 | Java, REST APIs, MySQL, NGINX</p>
+                <h3>CineBook Distributed - Fault-Tolerant Booking System</h3>
+                <ul>
+                  <li>Handled concurrent reservations with data consistency controls.</li>
+                  <li>Designed relational schema for booking transactions and seat allocation.</li>
+                  <li>Validated booking workflows under edge and load conditions.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="certifications" class="section card-section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Certifications</p>
+            <h2>Verified Learning</h2>
+          </div>
+          <div class="cert-grid">
+            <article class="glass-card cert-card">
+              <div class="certificate-holder">
+                <img src="images/certifications/certificate-power-bi.png" alt="Power BI Dashboards for Beginners certificate" />
+              </div>
+              <div class="cert-copy">
+                <h3>Power BI: Dashboards for Beginners</h3>
+                <p>LinkedIn Learning | Jan 2026</p>
+              </div>
+            </article>
+            <article class="glass-card cert-card">
+              <div class="certificate-copy-only">
+                <h3>What is Data Science</h3>
+                <p>Coursera - IBM | May 2025</p>
+                <p class="muted">Add additional certificate images here when ready.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="achievements" class="section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Achievements</p>
+            <h2>Competition Highlights</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3>AITHON 2026 - Hemas Holdings</h3>
+                <p>Finalist - Top 25</p>
+                <span>April 2026</span>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3>Venture Verse 2025 - Sabaragamuwa University</h3>
+                <p>Finalist - Top 5</p>
+                <span>Dec 2025</span>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3>Technopreneur Challenge, CodeFest 2025 - SLIIT</h3>
+                <p>Finalist - Top 10</p>
+                <span>Sep 2025</span>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3>IdeaSprint 2025 - University of Kelaniya</h3>
+                <p>Finalist - Top 10</p>
+                <span>July 2025</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="activities" class="section card-section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Extra Curricular Activities</p>
+            <h2>Beyond the Classroom</h2>
+          </div>
+          <div class="activity-card glass-card">
+            <h3>Detail Handler - LED KLN Club</h3>
+            <p class="muted">University of Kelaniya | July 2025 - April 2026</p>
+            <ul class="bullets">
+              <li>Managed coordination and documentation tasks for club activities and events.</li>
+              <li>Worked with cross-functional student teams on organizational initiatives.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="conduct" class="section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Conduct</p>
+            <h2>Professional Values</h2>
+          </div>
+          <div class="conduct-grid">
+            <article class="value-card">
+              <h3>Integrity</h3>
+              <p>Clear, honest, and responsible in every project and collaboration.</p>
+            </article>
+            <article class="value-card">
+              <h3>Collaboration</h3>
+              <p>Team-first mindset with respect for shared goals and communication.</p>
+            </article>
+            <article class="value-card">
+              <h3>Consistency</h3>
+              <p>Reliable delivery with attention to detail and thoughtful execution.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="skills" class="section card-section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Skills</p>
+            <h2>Tools and Technologies</h2>
+          </div>
+          <div class="skills-stack">
+            <div class="skill-group">
+              <h3>Data Analytics &amp; Engineering</h3>
+              <div class="chip-grid">
+                <span>Python</span><span>Power BI (Advanced)</span><span>DAX</span><span>SQL</span><span>ETL</span><span>Data Cleaning</span><span>EDA</span><span>Data Transformation</span><span>Data Validation</span><span>Data Pipelines</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Machine Learning</h3>
+              <div class="chip-grid">
+                <span>Scikit-learn</span><span>Classification</span><span>Regression</span><span>K-Means Clustering</span><span>Feature Engineering</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Data Visualization</h3>
+              <div class="chip-grid">
+                <span>Power BI</span><span>DAX</span><span>Tableau</span><span>Matplotlib</span><span>Excel</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>AI &amp; GenAI</h3>
+              <div class="chip-grid">
+                <span>LangChain</span><span>RAG Pipelines</span><span>HuggingFace Embeddings</span><span>Groq (Llama 3)</span><span>Streamlit</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Databases</h3>
+              <div class="chip-grid">
+                <span>MySQL</span><span>MongoDB</span><span>ChromaDB</span><span>Relational Data Modeling</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Cloud &amp; Tools</h3>
+              <div class="chip-grid">
+                <span>Microsoft Azure</span><span>Git</span><span>GitHub</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-brand">
+          <a class="brand footer-title" href="#home">Thilukshika<span>.</span></a>
+          <p>
+            Building thoughtful, data-driven solutions with a focus on clarity,
+            usability, and insight.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#conduct">Conduct</a>
+        </div>
+        <div class="footer-contact">
+          <h3>Get In Touch</h3>
+          <a href="mailto:thilukshikalj@gmail.com">thilukshikalj@gmail.com</a>
+          <span>Colombo, Sri Lanka</span>
+          <a href="https://www.linkedin.com/in/thilukshika" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/Thilukshika" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
