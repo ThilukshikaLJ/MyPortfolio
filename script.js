@@ -7,6 +7,7 @@ const projectsTrack = document.querySelector("#projects-track");
 const certGrid = document.querySelector("#cert-grid");
 const achievementsList = document.querySelector("#achievements-list");
 const activitiesList = document.querySelector("#activities-list");
+const contactForm = document.querySelector("#contact-form");
 
 const DATA_FILES = {
   projects: "data/projects.json",
@@ -136,29 +137,29 @@ function createCertificateCard(certificate) {
 
 function createTimelineItem(item) {
   const article = document.createElement("article");
-  article.className = "timeline-item";
+  article.className = "achievement-card glass-card";
 
-  const dot = document.createElement("div");
-  dot.className = "timeline-dot";
-
-  const content = document.createElement("div");
   const title = document.createElement("h3");
   title.textContent = item.title;
 
   const result = document.createElement("p");
+  result.className = "achievement-meta";
   result.textContent = item.result;
 
   const date = document.createElement("span");
   date.textContent = item.date;
 
+  const content = document.createElement("div");
+  content.className = "achievement-copy";
   content.append(title, result, date);
 
   const gallery = createPhotoGallery(item.photos, item.title);
   if (gallery) {
+    gallery.classList.add("achievement-gallery");
     content.appendChild(gallery);
   }
 
-  article.append(dot, content);
+  article.append(content);
   return article;
 }
 
@@ -291,3 +292,18 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 
 renderPortfolioData();
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = formData.get("name")?.toString().trim() || "Unknown sender";
+    const email = formData.get("email")?.toString().trim() || "";
+    const message = formData.get("message")?.toString().trim() || "";
+
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:thilukshikalj@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
