@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Donor Prediction System - ML Pipeline Development",
+    "meta": "Feb 2026 - Present | Python, Pandas, NumPy, Scikit-learn, Matplotlib",
+    "image": "images/projects/donor-prediction.png",
+    "alt": "Donor Prediction System project preview",
+    "link": "https://github.com/",
+    "bullets": [
+      "Built an end-to-end pipeline for donor CSV and Excel data.",
+      "Cleaned, transformed, and scaled data for downstream ML use.",
+      "Applied K-Means clustering for segmentation and pattern discovery."
+    ]
+  },
+  {
+    "title": "Olist E-Commerce Sales Analytics Dashboard",
+    "meta": "March 2026 | Power BI, Power Query, DAX, Excel, ETL",
+    "image": "images/projects/olist-dashboard.png",
+    "alt": "Olist E-Commerce Sales Analytics Dashboard preview",
+    "link": "https://github.com/",
+    "bullets": [
+      "Integrated 9 relational datasets with Power Query and ETL flows.",
+      "Designed a star schema to support reliable business analysis.",
+      "Built interactive dashboards for sales and customer insights."
+    ]
+  },
+  {
+    "title": "CineBook Distributed - Fault-Tolerant Booking System",
+    "meta": "Jan 2026 | Java, REST APIs, MySQL, NGINX",
+    "image": "images/projects/cinebook-distributed.png",
+    "alt": "CineBook Distributed project preview",
+    "link": "https://github.com/",
+    "bullets": [
+      "Handled concurrent reservations with data consistency controls.",
+      "Designed relational schema for booking transactions and seat allocation.",
+      "Validated booking workflows under edge and load conditions."
+    ]
+  }
+]

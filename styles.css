@@ -614,6 +614,11 @@ main {
   min-height: 100%;
 }
 
+.cert-copy {
+  display: grid;
+  gap: 0.25rem;
+}
+
 .certificate-holder {
   position: relative;
   min-height: 270px;
@@ -634,6 +639,11 @@ main {
 }
 
 .timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.activities-list {
   display: grid;
   gap: 1rem;
 }
@@ -664,6 +674,14 @@ main {
 .activity-card {
   border-radius: 28px;
   padding: 1.4rem;
+}
+
+.data-error {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(167, 119, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .conduct-grid {

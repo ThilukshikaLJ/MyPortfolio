@@ -1,0 +1,51 @@
+[
+      {
+    "title": "Test Automation Foundations",
+    "issuer": "LinkedIn Learning Community",
+    "date": "Apr 2026",
+    "image": "images/certifications/certificate-test-automation.png",
+    "alt": "Test Automation Foundations certificate"
+  },
+      {
+    "title": "Learning Selenium",
+    "issuer": "LinkedIn Learning Community",
+    "date": "Apr 2026",
+    "image": "images/certifications/certificate-learning-selenium.png",
+    "alt": "Learning Selenium certificate"
+  },
+        {
+    "title": "The Complete Excel Pivot Table: Data Analysis and Reportingy",
+    "issuer": "Udemy",
+    "date": "Feb 2026",
+    "image": "images/certifications/certificate-excel-pivot-table.png",
+    "alt": "The Complete Excel Pivot Table: Data Analysis and Reportingy certificate"
+  },
+    {
+    "title": "Power BI: Dashboards for Beginners",
+    "issuer": "LinkedIn Learning",
+    "date": "Jan 2026",
+    "image": "images/certifications/certificate-power-bi.jpeg",
+    "alt": "Power BI Dashboards for Beginners certificate"
+  },
+      {
+    "title": "Data Analytics Concepts",
+    "issuer": "NoviTech R&D Pvt Ltd",
+    "date": "Dec 2025",
+    "image": "images/certifications/certificate-data-analytics.jpeg",
+    "alt": "Data Analytics Concepts certificate"
+  },
+      {
+    "title": "Startup Essentials Program",
+    "issuer": "Yarl IT Hub",
+    "date": "Jun 2025",
+    "image": "images/certifications/certificate-startup-essentials.png",
+    "alt": "Startup Essentials Program certificate"
+  },
+    {
+    "title": "What is Data Science",
+    "issuer": "Coursera - IBM",
+    "date": "May 2025",
+    "image": "images/certifications/certificate-data-science.jpeg",
+    "alt": "What is Data Science certificate"
+  }
+]
