@@ -26,9 +26,11 @@
   {
     "title": "CineBook Distributed - Fault-Tolerant Booking System",
     "meta": "Jan 2026 | Java, REST APIs, MySQL, NGINX",
-    "image": ["images/projects/cinebook.png",
-              "images/projects/cinebook2.png",
-              "images/projects/cinebook3.png"],
+    "images": [
+      "images/projects/cinebook.png",
+      "images/projects/cinebook2.png",
+      "images/projects/cinebook3.png"
+    ],
     "alt": "CineBook Distributed project preview",
     "link": "https://github.com/",
     "bullets": [
@@ -40,9 +42,11 @@
   {
     "title": "TalkNest - Academic Session Booking & Resource Management System",
     "meta": "Jul 2025 - Apr 2026 | Django, DRF, JWT, React, MySQL, PDF Handling",
-    "image":  ["images/projects/talknest.jpeg",
-              "images/projects/talknest-2.jpeg",
-              "images/projects/talknest-3.jpeg"],
+    "images": [
+      "images/projects/talknest.jpeg",
+      "images/projects/talknest-2.jpeg",
+      "images/projects/talknest-3.jpeg"
+    ],
     "alt": "TalkNest academic session booking project preview",
     "bullets": [
       "Built a full-stack academic platform for student consultations, group session bookings, and lab resource management.",
@@ -54,9 +58,11 @@
   {
     "title": "Gazette Chatbot - RAG-Powered Legal Document Q&A System",
     "meta": "Aug 2025 - Jan 2026 | Python, LangChain, Groq (Llama 3), ChromaDB, HuggingFace, Streamlit",
-    "image": ["images/projects/gazette_chatbot.png",
-              "images/projects/gazette_chatbot2.png",
-              "images/projects/gazette_chatbot3.png"],
+    "images": [
+      "images/projects/gazette_chatbot.png",
+      "images/projects/gazette_chatbot2.png",
+      "images/projects/gazette_chatbot3.png"
+    ],
     "alt": "Gazette Chatbot project preview",
     "bullets": [
       "Built an AI-powered chatbot for semantic search and contextual Q&A across Sri Lanka's Legal Gazette documents.",
@@ -68,9 +74,11 @@
   {
     "title": "Web Application - Authentication & Authorization System",
     "meta": "Feb 2025 - Aug 2025 | MongoDB, Node.js, Express, React, Azure, JWT",
-    "image": ["images/projects/sthreehub.png",
-              "images/projects/sthreehub2.png",
-              "images/projects/sthreehub3.png"],
+    "images": [
+      "images/projects/sthreehub.png",
+      "images/projects/sthreehub2.png",
+      "images/projects/sthreehub3.png"
+    ],
     "alt": "Authentication and authorization web application preview",
     "bullets": [
       "Built a full-stack web application with complete authentication service using RESTful APIs.",

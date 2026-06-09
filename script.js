@@ -1,8 +1,6 @@
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
 const navLinks = document.querySelectorAll(".nav a");
-const slider = document.querySelector("#projects-track");
-const sliderButtons = document.querySelectorAll("[data-slide]");
 const projectsTrack = document.querySelector("#projects-track");
 const certGrid = document.querySelector("#cert-grid");
 const achievementsList = document.querySelector("#achievements-list");
@@ -65,28 +63,59 @@ function createPhotoGallery(photos, label, options = {}) {
   return gallery.childElementCount ? gallery : null;
 }
 
+function getProjectImages(project) {
+  if (Array.isArray(project.images) && project.images.length) {
+    return project.images.filter(Boolean);
+  }
+
+  if (Array.isArray(project.image) && project.image.length) {
+    return project.image.filter(Boolean);
+  }
+
+  if (typeof project.image === "string" && project.image) {
+    return [project.image];
+  }
+
+  return [];
+}
+
 function createProjectCard(project) {
   const article = document.createElement("article");
   article.className = "project-card";
 
-  const link = document.createElement("a");
-  link.className = "corner-link";
-  link.href = project.link;
-  link.target = "_blank";
-  link.rel = "noreferrer";
-  link.setAttribute("aria-label", `Open ${project.title} repository`);
-  link.innerHTML = "&#8599;";
-
   const imageWrap = document.createElement("div");
   imageWrap.className = "project-image";
+  const projectImages = getProjectImages(project);
+  const displayImage = document.createElement("img");
+  const imageSources = projectImages.length ? projectImages : [];
+  let imageIndex = 0;
+  let imageTimer = null;
 
-  if (project.image) {
-    const img = document.createElement("img");
-    img.src = project.image;
-    img.alt = project.alt || `${project.title} preview`;
-    img.loading = "lazy";
-    img.decoding = "async";
-    imageWrap.appendChild(img);
+  function showImage(index) {
+    if (!imageSources.length) return;
+    imageIndex = index % imageSources.length;
+    displayImage.src = imageSources[imageIndex];
+  }
+
+  function startImageAutoplay() {
+    if (imageTimer || imageSources.length < 2) return;
+    imageTimer = window.setInterval(() => {
+      showImage((imageIndex + 1) % imageSources.length);
+    }, 2000);
+  }
+
+  function stopImageAutoplay() {
+    if (!imageTimer) return;
+    window.clearInterval(imageTimer);
+    imageTimer = null;
+  }
+
+  if (imageSources.length) {
+    displayImage.src = imageSources[0];
+    displayImage.alt = project.alt || `${project.title} preview`;
+    displayImage.loading = "lazy";
+    displayImage.decoding = "async";
+    imageWrap.appendChild(displayImage);
   } else {
     imageWrap.classList.add("project-image-placeholder");
 
@@ -102,6 +131,21 @@ function createProjectCard(project) {
     placeholder.append(placeholderLabel, placeholderTitle);
     imageWrap.appendChild(placeholder);
   }
+
+  if (imageSources.length > 1) {
+    article.addEventListener("pointerenter", startImageAutoplay);
+    article.addEventListener("pointerleave", stopImageAutoplay);
+    article.addEventListener("focusin", startImageAutoplay);
+    article.addEventListener("focusout", stopImageAutoplay);
+  }
+
+  const link = document.createElement("a");
+  link.className = "corner-link";
+  link.href = project.link || "#";
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.setAttribute("aria-label", `Open ${project.title} repository`);
+  link.innerHTML = "&#8599;";
 
   const content = document.createElement("div");
   content.className = "project-content";
@@ -283,53 +327,6 @@ if (navToggle && nav) {
       navToggle.setAttribute("aria-expanded", "false");
     });
   });
-}
-
-if (slider && sliderButtons.length) {
-  const getScrollAmount = () => Math.min(420, slider.clientWidth * 0.9);
-  let autoplayTimer = null;
-
-  const scrollNext = () => {
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    const nextScrollLeft = slider.scrollLeft + getScrollAmount();
-
-    if (nextScrollLeft >= maxScrollLeft - 8) {
-      slider.scrollTo({ left: 0, behavior: "smooth" });
-      return;
-    }
-
-    slider.scrollBy({
-      left: getScrollAmount(),
-      behavior: "smooth",
-    });
-  };
-
-  const startAutoplay = () => {
-    if (autoplayTimer) return;
-    autoplayTimer = window.setInterval(scrollNext, 2000);
-  };
-
-  const stopAutoplay = () => {
-    if (!autoplayTimer) return;
-    window.clearInterval(autoplayTimer);
-    autoplayTimer = null;
-  };
-
-  sliderButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      stopAutoplay();
-      const direction = button.dataset.slide === "next" ? 1 : -1;
-      slider.scrollBy({
-        left: direction * getScrollAmount(),
-        behavior: "smooth",
-      });
-    });
-  });
-
-  slider.addEventListener("pointerenter", startAutoplay);
-  slider.addEventListener("pointerleave", stopAutoplay);
-  slider.addEventListener("focusin", startAutoplay);
-  slider.addEventListener("focusout", stopAutoplay);
 }
 
 const observer = new IntersectionObserver(
