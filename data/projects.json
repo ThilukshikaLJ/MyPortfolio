@@ -26,13 +26,78 @@
   {
     "title": "CineBook Distributed - Fault-Tolerant Booking System",
     "meta": "Jan 2026 | Java, REST APIs, MySQL, NGINX",
-    "image": "images/projects/cinebook-distributed.png",
+    "image": ["images/projects/cinebook.png",
+              "images/projects/cinebook2.png",
+              "images/projects/cinebook3.png"],
     "alt": "CineBook Distributed project preview",
     "link": "https://github.com/",
     "bullets": [
       "Handled concurrent reservations with data consistency controls.",
       "Designed relational schema for booking transactions and seat allocation.",
       "Validated booking workflows under edge and load conditions."
+    ]
+  },
+  {
+    "title": "TalkNest - Academic Session Booking & Resource Management System",
+    "meta": "Jul 2025 - Apr 2026 | Django, DRF, JWT, React, MySQL, PDF Handling",
+    "image":  ["images/projects/talknest.jpeg",
+              "images/projects/talknest-2.jpeg",
+              "images/projects/talknest-3.jpeg"],
+    "alt": "TalkNest academic session booking project preview",
+    "bullets": [
+      "Built a full-stack academic platform for student consultations, group session bookings, and lab resource management.",
+      "Implemented role-based access control for students and instructors with JWT authentication.",
+      "Developed real-time notifications, session rescheduling, and PDF document handling workflows.",
+      "Designed RESTful APIs with Django REST Framework ensuring data validation and scalable architecture."
+    ]
+  },
+  {
+    "title": "Gazette Chatbot - RAG-Powered Legal Document Q&A System",
+    "meta": "Aug 2025 - Jan 2026 | Python, LangChain, Groq (Llama 3), ChromaDB, HuggingFace, Streamlit",
+    "image": ["images/projects/gazette_chatbot.png",
+              "images/projects/gazette_chatbot2.png",
+              "images/projects/gazette_chatbot3.png"],
+    "alt": "Gazette Chatbot project preview",
+    "bullets": [
+      "Built an AI-powered chatbot for semantic search and contextual Q&A across Sri Lanka's Legal Gazette documents.",
+      "Developed a complete RAG pipeline using LangChain, HuggingFace embeddings, and ChromaDB for vector retrieval.",
+      "Implemented conversation memory for natural follow-ups and citation-backed responses with source page numbers.",
+      "Integrated multi-LLM architecture supporting Groq, OpenAI, and Ollama with a Streamlit chat interface."
+    ]
+  },
+  {
+    "title": "Web Application - Authentication & Authorization System",
+    "meta": "Feb 2025 - Aug 2025 | MongoDB, Node.js, Express, React, Azure, JWT",
+    "image": ["images/projects/sthreehub.png",
+              "images/projects/sthreehub2.png",
+              "images/projects/sthreehub3.png"],
+    "alt": "Authentication and authorization web application preview",
+    "bullets": [
+      "Built a full-stack web application with complete authentication service using RESTful APIs.",
+      "Implemented email verification, JWT login, password reset, and role-based access control (Buyer/Seller).",
+      "Deployed on Microsoft Azure with MongoDB as the primary database."
+    ]
+  },
+  {
+    "title": "Inventory Management System",
+    "meta": "Jun 2024 - Nov 2024 | Java, MySQL, OOP, GUI",
+    "image": null,
+    "alt": "Inventory management system preview",
+    "bullets": [
+      "Developed an inventory management system for a telecommunications company.",
+      "Built features for stock analysis, sales tracking, inventory management, and automated reporting.",
+      "Implemented PDF invoice generation for transactions with a desktop GUI interface."
+    ]
+  },
+  {
+    "title": "Racing Zone - C++ Simulator",
+    "meta": "Apr 2024 - Jun 2024 | C++",
+    "image": null,
+    "alt": "Racing Zone simulator preview",
+    "bullets": [
+      "Built a console-based racing simulator as a first-year programming project.",
+      "Implemented core game logic including lives system, adjustable speed, and real-time score tracking.",
+      "Foundation project that established core programming and problem-solving skills."
     ]
   }
 ]

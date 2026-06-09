@@ -80,12 +80,28 @@ function createProjectCard(project) {
   const imageWrap = document.createElement("div");
   imageWrap.className = "project-image";
 
-  const img = document.createElement("img");
-  img.src = project.image;
-  img.alt = project.alt || `${project.title} preview`;
-  img.loading = "lazy";
-  img.decoding = "async";
-  imageWrap.appendChild(img);
+  if (project.image) {
+    const img = document.createElement("img");
+    img.src = project.image;
+    img.alt = project.alt || `${project.title} preview`;
+    img.loading = "lazy";
+    img.decoding = "async";
+    imageWrap.appendChild(img);
+  } else {
+    imageWrap.classList.add("project-image-placeholder");
+
+    const placeholder = document.createElement("div");
+    placeholder.className = "project-placeholder";
+
+    const placeholderLabel = document.createElement("span");
+    placeholderLabel.textContent = "Project";
+
+    const placeholderTitle = document.createElement("strong");
+    placeholderTitle.textContent = project.title;
+
+    placeholder.append(placeholderLabel, placeholderTitle);
+    imageWrap.appendChild(placeholder);
+  }
 
   const content = document.createElement("div");
   content.className = "project-content";
@@ -271,9 +287,37 @@ if (navToggle && nav) {
 
 if (slider && sliderButtons.length) {
   const getScrollAmount = () => Math.min(420, slider.clientWidth * 0.9);
+  let autoplayTimer = null;
+
+  const scrollNext = () => {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    const nextScrollLeft = slider.scrollLeft + getScrollAmount();
+
+    if (nextScrollLeft >= maxScrollLeft - 8) {
+      slider.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+
+    slider.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth",
+    });
+  };
+
+  const startAutoplay = () => {
+    if (autoplayTimer) return;
+    autoplayTimer = window.setInterval(scrollNext, 2000);
+  };
+
+  const stopAutoplay = () => {
+    if (!autoplayTimer) return;
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  };
 
   sliderButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      stopAutoplay();
       const direction = button.dataset.slide === "next" ? 1 : -1;
       slider.scrollBy({
         left: direction * getScrollAmount(),
@@ -281,6 +325,11 @@ if (slider && sliderButtons.length) {
       });
     });
   });
+
+  slider.addEventListener("pointerenter", startAutoplay);
+  slider.addEventListener("pointerleave", stopAutoplay);
+  slider.addEventListener("focusin", startAutoplay);
+  slider.addEventListener("focusout", stopAutoplay);
 }
 
 const observer = new IntersectionObserver(
