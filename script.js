@@ -86,15 +86,48 @@ function createProjectCard(project) {
   const imageWrap = document.createElement("div");
   imageWrap.className = "project-image";
   const projectImages = getProjectImages(project);
-  const displayImage = document.createElement("img");
   const imageSources = projectImages.length ? projectImages : [];
   let imageIndex = 0;
   let imageTimer = null;
 
+  let currentImage = null;
+
   function showImage(index) {
     if (!imageSources.length) return;
-    imageIndex = index % imageSources.length;
-    displayImage.src = imageSources[imageIndex];
+    const nextIndex = index % imageSources.length;
+    if (nextIndex === imageIndex && currentImage) return;
+
+    const nextImage = document.createElement("img");
+    nextImage.className = "project-image-frame project-image-next";
+    nextImage.src = imageSources[nextIndex];
+    nextImage.alt = project.alt || `${project.title} preview`;
+    nextImage.loading = "lazy";
+    nextImage.decoding = "async";
+    imageWrap.appendChild(nextImage);
+
+    if (!currentImage) {
+      nextImage.classList.add("project-image-active");
+      currentImage = nextImage;
+      imageIndex = nextIndex;
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      currentImage.classList.add("slide-out-left");
+      nextImage.classList.add("slide-in-from-right");
+    });
+
+    const finishTransition = () => {
+      if (!currentImage || !nextImage.isConnected) return;
+      currentImage.remove();
+      nextImage.classList.remove("project-image-next", "slide-in-from-right");
+      nextImage.classList.add("project-image-active");
+      currentImage = nextImage;
+      imageIndex = nextIndex;
+    };
+
+    nextImage.addEventListener("transitionend", finishTransition, { once: true });
+    window.setTimeout(finishTransition, 550);
   }
 
   function startImageAutoplay() {
@@ -111,11 +144,17 @@ function createProjectCard(project) {
   }
 
   if (imageSources.length) {
-    displayImage.src = imageSources[0];
-    displayImage.alt = project.alt || `${project.title} preview`;
-    displayImage.loading = "lazy";
-    displayImage.decoding = "async";
-    imageWrap.appendChild(displayImage);
+    const stage = document.createElement("div");
+    stage.className = "project-image-stage";
+    imageWrap.appendChild(stage);
+
+    currentImage = document.createElement("img");
+    currentImage.className = "project-image-frame project-image-active";
+    currentImage.src = imageSources[0];
+    currentImage.alt = project.alt || `${project.title} preview`;
+    currentImage.loading = "lazy";
+    currentImage.decoding = "async";
+    stage.appendChild(currentImage);
   } else {
     imageWrap.classList.add("project-image-placeholder");
 

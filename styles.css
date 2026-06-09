@@ -564,6 +564,13 @@ main {
     rgba(255, 255, 255, 0.02);
 }
 
+.project-image-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .project-image-placeholder {
   background:
     radial-gradient(circle at 20% 20%, rgba(143, 91, 255, 0.26), transparent 34%),
@@ -595,32 +602,56 @@ main {
   line-height: 1.08;
 }
 
-.project-image img,
-.certificate-holder img {
+.project-image-stage .project-image-frame {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-position: center;
-  transition: transform 0.35s ease, opacity 0.25s ease;
+  transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
-.project-image img {
+.project-image-frame {
   object-fit: contain;
   padding: 0.5rem;
   background: linear-gradient(135deg, rgba(7, 7, 16, 0.95), rgba(18, 12, 34, 0.92));
 }
 
+.project-image-active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.project-image-next {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+.slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slide-in-from-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .certificate-holder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-image img {
   object-fit: cover;
 }
 
 .project-content {
   padding: 1.2rem 1.2rem 1.35rem;
-}
-
-.project-card:hover .project-image img,
-.project-card:focus-within .project-image img {
-  transform: none;
 }
 
 .project-meta {
@@ -958,6 +989,27 @@ main {
   border-top: 1px solid rgba(167, 119, 255, 0.14);
 }
 
+.footer-bottom {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0 0 2.2rem;
+}
+
+.footer-bottom-line {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 2rem;
+  background: rgba(167, 119, 255, 0.16);
+}
+
+.footer-bottom p {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
 .footer-title {
   font-size: 1.2rem;
 }
@@ -1200,6 +1252,10 @@ main {
   }
 
   .footer {
+    width: min(1200px, calc(100% - 1.4rem));
+  }
+
+  .footer-bottom {
     width: min(1200px, calc(100% - 1.4rem));
   }
 }

@@ -84,7 +84,6 @@
     "bullets": [
       "Developed an Android study companion application to enhance digital learning through document reading and annotation.",
       "Implemented PDF and image viewing, note-taking, and bookmarking features for structured study workflows.",
-      "Integrated context-aware UI adjustments to improve user experience across different study scenarios.",
       "Used SQLite and Room database for efficient local data storage and application state management."
     ]
   },
