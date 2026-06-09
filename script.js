@@ -7,6 +7,7 @@ const projectsTrack = document.querySelector("#projects-track");
 const certGrid = document.querySelector("#cert-grid");
 const achievementsList = document.querySelector("#achievements-list");
 const activitiesList = document.querySelector("#activities-list");
+const contactForm = document.querySelector("#contact-form");
 
 const DATA_FILES = {
   projects: "data/projects.json",
@@ -23,6 +24,37 @@ function createList(items) {
     list.appendChild(li);
   });
   return list;
+}
+
+function createPhotoGallery(photos, label) {
+  if (!Array.isArray(photos) || photos.length === 0) {
+    return null;
+  }
+
+  const gallery = document.createElement("div");
+  gallery.className = "photo-gallery";
+
+  photos.slice(0, 3).forEach((photo, index) => {
+    if (!photo) return;
+
+    const frame = document.createElement("a");
+    frame.className = "photo-thumb";
+    frame.href = photo;
+    frame.target = "_blank";
+    frame.rel = "noreferrer";
+    frame.setAttribute("aria-label", `${label} photo ${index + 1}`);
+
+    const img = document.createElement("img");
+    img.src = photo;
+    img.alt = `${label} photo ${index + 1}`;
+    img.loading = "lazy";
+    img.decoding = "async";
+
+    frame.appendChild(img);
+    gallery.appendChild(frame);
+  });
+
+  return gallery.childElementCount ? gallery : null;
 }
 
 function createProjectCard(project) {
@@ -121,6 +153,12 @@ function createTimelineItem(item) {
   date.textContent = item.date;
 
   content.append(title, result, date);
+
+  const gallery = createPhotoGallery(item.photos, item.title);
+  if (gallery) {
+    content.appendChild(gallery);
+  }
+
   article.append(dot, content);
   return article;
 }
@@ -137,6 +175,12 @@ function createActivityCard(activity) {
   meta.textContent = `${activity.org} | ${activity.period}`;
 
   article.append(title, meta, createList(activity.bullets));
+
+  const gallery = createPhotoGallery(activity.photos, activity.title);
+  if (gallery) {
+    article.appendChild(gallery);
+  }
+
   return article;
 }
 
@@ -248,3 +292,18 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 
 renderPortfolioData();
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = formData.get("name")?.toString().trim() || "Unknown sender";
+    const email = formData.get("email")?.toString().trim() || "";
+    const message = formData.get("message")?.toString().trim() || "";
+
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:thilukshikalj@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
