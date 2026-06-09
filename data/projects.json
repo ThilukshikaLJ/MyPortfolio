@@ -4,7 +4,7 @@
     "meta": "Feb 2026 - Present | Python, Pandas, NumPy, Scikit-learn, Matplotlib",
     "image": "images/projects/donor-prediction.png",
     "alt": "Donor Prediction System project preview",
-    "link": "https://github.com/",
+    "link": "https://github.com/ThilukshikaLJ",
     "bullets": [
       "Built an end-to-end pipeline for donor CSV and Excel data.",
       "Cleaned, transformed, and scaled data for downstream ML use.",
@@ -16,7 +16,7 @@
     "meta": "March 2026 | Power BI, Power Query, DAX, Excel, ETL",
     "image": "images/projects/olist-dashboard.png",
     "alt": "Olist E-Commerce Sales Analytics Dashboard preview",
-    "link": "https://github.com/",
+    "link": "https://github.com/ThilukshikaLJ/Olist-PowerBI-Dashboard",
     "bullets": [
       "Integrated 9 relational datasets with Power Query and ETL flows.",
       "Designed a star schema to support reliable business analysis.",
@@ -32,7 +32,7 @@
       "images/projects/cinebook3.png"
     ],
     "alt": "CineBook Distributed project preview",
-    "link": "https://github.com/",
+    "link": "https://github.com/ThilukshikaLJ/cinebook-distributed-system",
     "bullets": [
       "Handled concurrent reservations with data consistency controls.",
       "Designed relational schema for booking transactions and seat allocation.",
@@ -47,11 +47,11 @@
       "images/projects/talknest-2.jpeg",
       "images/projects/talknest-3.jpeg"
     ],
+        "link": "https://github.com/ThilukshikaLJ/TalkNest",
     "alt": "TalkNest academic session booking project preview",
     "bullets": [
       "Built a full-stack academic platform for student consultations, group session bookings, and lab resource management.",
       "Implemented role-based access control for students and instructors with JWT authentication.",
-      "Developed real-time notifications, session rescheduling, and PDF document handling workflows.",
       "Designed RESTful APIs with Django REST Framework ensuring data validation and scalable architecture."
     ]
   },
@@ -63,12 +63,29 @@
       "images/projects/gazette_chatbot2.png",
       "images/projects/gazette_chatbot3.png"
     ],
+    "link": "https://github.com/ThilukshikaLJ/gazette-chatbot",
     "alt": "Gazette Chatbot project preview",
     "bullets": [
       "Built an AI-powered chatbot for semantic search and contextual Q&A across Sri Lanka's Legal Gazette documents.",
       "Developed a complete RAG pipeline using LangChain, HuggingFace embeddings, and ChromaDB for vector retrieval.",
-      "Implemented conversation memory for natural follow-ups and citation-backed responses with source page numbers.",
       "Integrated multi-LLM architecture supporting Groq, OpenAI, and Ollama with a Streamlit chat interface."
+    ]
+  },
+  {
+    "title": "SmartStudyApp - Intelligent Study Companion",
+    "meta": "Jan 2026 | Java (Android), Android SDK, SQLite, Room Database",
+    "images": [
+      "images/projects/smart_study.png",
+      "images/projects/smart_study2.png",
+      "images/projects/smart_study3.png"
+    ],
+    "link": "https://github.com/ThilukshikaLJ/SmartStudyApp",
+    "alt": "SmartStudyApp project preview",
+    "bullets": [
+      "Developed an Android study companion application to enhance digital learning through document reading and annotation.",
+      "Implemented PDF and image viewing, note-taking, and bookmarking features for structured study workflows.",
+      "Integrated context-aware UI adjustments to improve user experience across different study scenarios.",
+      "Used SQLite and Room database for efficient local data storage and application state management."
     ]
   },
   {
@@ -79,6 +96,7 @@
       "images/projects/sthreehub2.png",
       "images/projects/sthreehub3.png"
     ],
+    "link": "https://github.com/ThilukshikaLJ/SthreeHub",
     "alt": "Authentication and authorization web application preview",
     "bullets": [
       "Built a full-stack web application with complete authentication service using RESTful APIs.",
@@ -89,7 +107,10 @@
   {
     "title": "Inventory Management System",
     "meta": "Jun 2024 - Nov 2024 | Java, MySQL, OOP, GUI",
-    "image": null,
+    "image": ["images/projects/java.jpeg",
+              "images/projects/java2.jpeg",
+              "images/projects/java3.jpeg"
+    ],
     "alt": "Inventory management system preview",
     "bullets": [
       "Developed an inventory management system for a telecommunications company.",
@@ -100,7 +121,10 @@
   {
     "title": "Racing Zone - C++ Simulator",
     "meta": "Apr 2024 - Jun 2024 | C++",
-    "image": null,
+    "images": [
+      "images/projects/Cgame.jpeg",
+      "images/projects/Cgame2.jpeg"
+    ],
     "alt": "Racing Zone simulator preview",
     "bullets": [
       "Built a console-based racing simulator as a first-year programming project.",
