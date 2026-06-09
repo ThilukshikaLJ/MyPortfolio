@@ -7,7 +7,6 @@ const projectsTrack = document.querySelector("#projects-track");
 const certGrid = document.querySelector("#cert-grid");
 const achievementsList = document.querySelector("#achievements-list");
 const activitiesList = document.querySelector("#activities-list");
-const contactForm = document.querySelector("#contact-form");
 
 const DATA_FILES = {
   projects: "data/projects.json",
@@ -292,18 +291,3 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 
 renderPortfolioData();
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const name = formData.get("name")?.toString().trim() || "Unknown sender";
-    const email = formData.get("email")?.toString().trim() || "";
-    const message = formData.get("message")?.toString().trim() || "";
-
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:thilukshikalj@gmail.com?subject=${subject}&body=${body}`;
-  });
-}
