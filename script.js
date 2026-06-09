@@ -103,7 +103,7 @@ function createProjectCard(project) {
     nextImage.alt = project.alt || `${project.title} preview`;
     nextImage.loading = "lazy";
     nextImage.decoding = "async";
-    imageWrap.appendChild(nextImage);
+    stage.appendChild(nextImage);
 
     if (!currentImage) {
       nextImage.classList.add("project-image-active");
