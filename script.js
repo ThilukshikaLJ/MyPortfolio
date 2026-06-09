@@ -26,7 +26,7 @@ function createList(items) {
   return list;
 }
 
-function createPhotoGallery(photos, label) {
+function createPhotoGallery(photos, label, options = {}) {
   if (!Array.isArray(photos) || photos.length === 0) {
     return null;
   }
@@ -34,8 +34,16 @@ function createPhotoGallery(photos, label) {
   const gallery = document.createElement("div");
   gallery.className = "photo-gallery";
 
-  photos.slice(0, 3).forEach((photo, index) => {
-    if (!photo) return;
+  const slots = options.forceSlots ? 3 : Math.min(photos.length, 3);
+
+  for (let index = 0; index < slots; index += 1) {
+    const photo = photos[index];
+    if (!photo) {
+      const emptyFrame = document.createElement("div");
+      emptyFrame.className = "photo-thumb empty";
+      gallery.appendChild(emptyFrame);
+      continue;
+    }
 
     const frame = document.createElement("a");
     frame.className = "photo-thumb";
@@ -52,7 +60,7 @@ function createPhotoGallery(photos, label) {
 
     frame.appendChild(img);
     gallery.appendChild(frame);
-  });
+  }
 
   return gallery.childElementCount ? gallery : null;
 }
@@ -153,7 +161,7 @@ function createTimelineItem(item) {
   content.className = "achievement-copy";
   content.append(title, result, date);
 
-  const gallery = createPhotoGallery(item.photos, item.title);
+  const gallery = createPhotoGallery(item.photos, item.title, { forceSlots: 3 });
   if (gallery) {
     gallery.classList.add("achievement-gallery");
     content.appendChild(gallery);
@@ -176,8 +184,9 @@ function createActivityCard(activity) {
 
   article.append(title, meta, createList(activity.bullets));
 
-  const gallery = createPhotoGallery(activity.photos, activity.title);
+  const gallery = createPhotoGallery(activity.photos, activity.title, { forceSlots: 3 });
   if (gallery) {
+    gallery.classList.add("activity-gallery");
     article.appendChild(gallery);
   }
 
