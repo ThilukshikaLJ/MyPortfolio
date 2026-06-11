@@ -1518,6 +1518,13 @@ main {
     display: none;
   }
 
+  .contact-submit {
+    display: inline-flex;
+    width: 100%;
+    min-height: 44px;
+    padding-inline: 1rem;
+  }
+
   .hero {
     gap: 1.6rem;
   }
