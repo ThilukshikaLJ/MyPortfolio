@@ -6,6 +6,7 @@ const certGrid = document.querySelector("#cert-grid");
 const achievementsList = document.querySelector("#achievements-list");
 const activitiesList = document.querySelector("#activities-list");
 const contactForm = document.querySelector("#contact-form");
+const contactToast = document.querySelector("#contact-toast");
 
 const DATA_FILES = {
   projects: "data/projects.json",
@@ -390,17 +391,43 @@ document.querySelectorAll(".reveal").forEach((element) => {
 
 renderPortfolioData();
 
+function showContactToast(message, type = "success") {
+  if (!contactToast) return;
+
+  contactToast.textContent = message;
+  contactToast.dataset.state = type;
+  contactToast.classList.add("is-visible");
+
+  window.clearTimeout(showContactToast.hideTimer);
+  showContactToast.hideTimer = window.setTimeout(() => {
+    contactToast.classList.remove("is-visible");
+  }, 3200);
+}
+
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(contactForm);
-    const name = formData.get("name")?.toString().trim() || "Unknown sender";
-    const email = formData.get("email")?.toString().trim() || "";
-    const message = formData.get("message")?.toString().trim() || "";
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:thilukshikalj@gmail.com?subject=${subject}&body=${body}`;
+      if (response.ok) {
+        contactForm.reset();
+        showContactToast("Message sent successfully", "success");
+        return;
+      }
+
+      showContactToast("Message could not be sent", "error");
+    } catch (error) {
+      console.error(error);
+      showContactToast("Message could not be sent", "error");
+    }
   });
 }

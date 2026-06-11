@@ -329,7 +329,12 @@
               </div>
             </article>
 
-            <form class="contact-form glass-card" id="contact-form">
+            <form
+              class="contact-form glass-card"
+              id="contact-form"
+              action="https://formspree.io/f/mdavldqp"
+              method="POST"
+            >
               <label>
                 <span>Your Name</span>
                 <input type="text" name="name" placeholder="Thilukshika Leo Jebarajah" required />
@@ -348,6 +353,7 @@
                 ></textarea>
               </label>
               <button class="resume-btn contact-submit" type="submit">Send Message</button>
+              <p class="contact-toast" id="contact-toast" role="status" aria-live="polite"></p>
             </form>
           </div>
         </section>
